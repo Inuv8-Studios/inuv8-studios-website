@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 
 type Member = {
   id: string;
@@ -140,9 +141,8 @@ export default function TeamSection() {
                     className="cursor-pointer"
                     aria-pressed={activeIndex === i}
                   >
-                    <img
+                    <Image
                       className={
-                        // base classes + conditional sizing and grayscale removal when active/hover
                         `w-full object-cover object-top rounded-md transition-all duration-500 ${
                           active ? "grayscale-0" : "grayscale"
                         } ${active ? "group-hover:rounded-xl" : ""} ${

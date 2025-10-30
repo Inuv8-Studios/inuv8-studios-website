@@ -4,6 +4,7 @@
 import React from "react";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import { ProgressiveBlur } from "@/components/ui/progressive-blur";
+import Image from "next/image";
 
 export type LogoItem = {
   src: string;
@@ -32,14 +33,13 @@ export function PartnerSlider({
       <InfiniteSlider speedOnHover={speedOnHover} speed={speed} gap={gap}>
         {logos.map((logo, idx) => (
           <div key={idx} className="flex items-center px-4">
-            <img
+            <Image
               src={logo.src}
               alt={logo.alt ?? `partner-${idx}`}
               className={`mx-auto h-${logo.height ?? 5} w-auto dark:invert ${
                 logo.className ?? ""
               }`}
               height={logo.height ?? 20}
-              width="auto"
               loading={idx === 0 ? "eager" : "lazy"}
             />
           </div>

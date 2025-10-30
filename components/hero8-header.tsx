@@ -13,16 +13,15 @@ const menuItems = [
 export const HeroHeader = () => {
   const [menuState, setMenuState] = React.useState(false);
 
-  // ref that wraps the interactive menu panel (the element we want to ignore clicks inside)
-  const menuRef = React.useRef<HTMLElement | null>(null);
+  // strongly typed ref for the menu panel
+  const menuRef = React.useRef<HTMLDivElement | null>(null);
 
   React.useEffect(() => {
     if (!menuState) return;
 
-    const handleOutside = (e: MouseEvent | TouchEvent) => {
+    const handleOutside = (e: Event) => {
       const target = e.target as Node | null;
       if (!menuRef.current) return;
-      // if user clicked/tapped outside the menuRef element, close
       if (target && !menuRef.current.contains(target)) {
         setMenuState(false);
       }
@@ -42,7 +41,6 @@ export const HeroHeader = () => {
     };
   }, [menuState]);
 
-  // helper to close menu when a link is clicked
   const closeAndNavigate = () => setMenuState(false);
 
   return (
@@ -68,15 +66,14 @@ export const HeroHeader = () => {
                 aria-label={menuState == true ? "Close Menu" : "Open Menu"}
                 className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
               >
-                {" "}
-                <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />{" "}
-                <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />{" "}
+                <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
+                <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
               </button>
             </div>
 
             {/* attach ref to the panel that should remain open when clicked inside */}
             <div
-              ref={menuRef as any}
+              ref={menuRef}
               className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex hidden w-full flex-wrap items-center justify-end rounded-3xl p-6 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent"
             >
               <div className="lg:hidden">

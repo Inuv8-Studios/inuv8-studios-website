@@ -3,7 +3,6 @@
 import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import { HeroHeader } from "@/components/hero8-header";
 import { HeroBackground } from "@/components/hero-background";
 import { PartnerSlider } from "./partner-slider";
@@ -93,7 +92,7 @@ export default function HeroSection() {
           <div className="group relative m-auto max-w-6xl px-6">
             <div className="flex flex-col items-center md:flex-row">
               <div className="md:max-w-44 md:border-r md:pr-6">
-                <p className="text-end text-sm">We're Build For</p>
+                <p className="text-end text-sm">We&apos;re Build For</p>
               </div>
 
               <div className="relative py-6 md:w-[calc(100%-11rem)]">

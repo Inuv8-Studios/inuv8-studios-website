@@ -7,7 +7,7 @@ export default function CallToAction() {
       <div className="mx-auto max-w-5xl px-6">
         <div className="text-center">
           <h2 className="text-balance text-4xl font-semibold lg:text-5xl">
-            Let's get you in.
+            Let&apos;s get you in.
           </h2>
           <p className="mt-4">
             Experience The Surreal and Magical Journey Through Dreams...

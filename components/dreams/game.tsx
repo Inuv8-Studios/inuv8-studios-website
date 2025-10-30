@@ -32,7 +32,7 @@ export default function Game() {
             </p>
             <p className="text-muted-foreground leading-relaxed">
               <span className="font-semibold text-accent-foreground">
-                'Tunu
+                &apos;Tunu
               </span>{" "}
               , our main Character, is to journey through Dreams restoring its
               broken pillars whilst fending off horrible Nightmares and solving
