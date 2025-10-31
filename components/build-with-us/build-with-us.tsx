@@ -243,8 +243,8 @@ export default function BuildWithUsContact() {
               </div>
             </div>
 
-            <div className="mt-6 gap-4">
-              <div>
+            <div className="mt-4 flex justify-centre gap-4">
+              <div className="mt-2 flex gap-4">
                 {/* Submit button */}
                 <Button
                   type="submit"
@@ -254,8 +254,7 @@ export default function BuildWithUsContact() {
                 >
                   {loading ? "Sending..." : "Submit Inquiry"}
                 </Button>
-              </div>
-              <div>
+
                 {/* Fallback email button */}
                 <Button asChild size="lg" variant="outline">
                   <Link
