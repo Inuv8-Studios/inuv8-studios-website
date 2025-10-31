@@ -16,8 +16,8 @@ type Post = {
 const POSTS: Post[] = [
   {
     id: "midnight-dreams-devlog-01",
-    title: "Midnight Dreams — Devlog #1: Beginnings",
-    date: "June 15, 2024",
+    title: "Midnight Dreams: Beginnings",
+    date: "September 26, 2025",
     cover: "/images/background-3.jpg",
     excerpt:
       "We formed Inuv8 in mid-2022 — this devlog covers our early design decisions, art direction and the engines powering our dreamscapes.",
@@ -110,8 +110,7 @@ export default function WhatsNewPage() {
                   </p>
 
                   <div className="mt-4 flex items-center justify-between">
-                    <div className="flex gap-2">
-                    </div>
+                    <div className="flex gap-2"></div>
 
                     <div className="text-right">
                       <button
@@ -142,10 +141,10 @@ export default function WhatsNewPage() {
         </footer>
       </div>
 
-      {/* Modal for active post */}
+      {/* Modal for active post - fits viewport and scrolls when content is long */}
       {active && (
         <div
-          className="fixed inset-0 z-50 flex items-start justify-center p-4 sm:p-8"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8"
           role="dialog"
           aria-modal="true"
           aria-labelledby="post-title"
@@ -156,7 +155,10 @@ export default function WhatsNewPage() {
             onClick={() => setActive(null)}
           />
 
-          <article className="relative z-50 mx-auto max-w-3xl overflow-auto rounded-2xl bg-card p-6 shadow-lg sm:p-8">
+          <article
+            className="relative z-50 w-full max-w-3xl max-h-[calc(100vh-4rem)] overflow-auto rounded-2xl bg-card p-6 shadow-lg sm:p-8"
+            aria-live="polite"
+          >
             <div className="flex items-start justify-between gap-4">
               <div>
                 <h2 id="post-title" className="text-2xl font-semibold">
@@ -178,13 +180,16 @@ export default function WhatsNewPage() {
             </div>
 
             {active.cover && (
-              <div className="relative my-6 h-64 w-full overflow-hidden rounded-lg">
-                <Image
-                  src={active.cover}
-                  alt={active.title}
-                  fill
-                  className="object-cover"
-                />
+              <div className="relative my-6 w-full overflow-hidden rounded-lg">
+                {/* limit image height so it won't force modal overflow */}
+                <div className="relative h-40 sm:h-64 w-full">
+                  <Image
+                    src={active.cover}
+                    alt={active.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </div>
             )}
 
@@ -200,7 +205,6 @@ export default function WhatsNewPage() {
                 }
                 if (line.trim() === "") return null;
                 if (line.trim().startsWith("- ")) {
-                  // render list; simple transform
                   const items = active.content
                     .split("\n")
                     .filter((l) => l.trim().startsWith("- "))
@@ -228,8 +232,7 @@ export default function WhatsNewPage() {
                 </Link>
               </div>
 
-              <div className="flex gap-3">
-                {/* share link opens compose in Gmail */}
+              {/* <div className="flex gap-3">
                 <a
                   href={`https://mail.google.com/mail/?view=cm&to=hello@inuv8studios.com&su=${encodeURIComponent(
                     active.title
@@ -240,14 +243,7 @@ export default function WhatsNewPage() {
                 >
                   Email about this post
                 </a>
-
-                <Link
-                  href="/build-with-us"
-                  className="text-sm rounded-md bg-accent-foreground px-3 py-1 text-white"
-                >
-                  Work with us
-                </Link>
-              </div>
+              </div> */}
             </div>
           </article>
         </div>
