@@ -243,7 +243,7 @@ export default function BuildWithUsContact() {
               </div>
             </div>
 
-            <div className="mt-6 flex gap-4">
+            <div className="mt-6 gap-4">
               <div>
                 {/* Submit button */}
                 <Button
