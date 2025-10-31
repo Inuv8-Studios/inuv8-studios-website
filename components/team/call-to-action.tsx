@@ -12,7 +12,10 @@ export default function CallToAction() {
 
           <div className="mt-12 flex flex-wrap justify-center gap-4">
             <Button asChild size="lg">
-              <a href="mailto:your@email.com?subject=Hello%20from%20your%20site&body=Hi%20there%2C%0A%0AI'd%20like%20to%20get%20in%20touch...">
+              <a
+                href="mailto:inuv8studios@gmail.com?subject=Application%20for%20Possible%20Role&body=Hi%20there%2C%0A%0AI'd%20like%20to%20get%20in%20touch..."
+                target="_blank"
+              >
                 <span>Reach Out</span>
               </a>
             </Button>

@@ -12,6 +12,8 @@ export const Logo = ({ className }: { className?: string }) => {
     <Image
       src="/inuv8_logo_dark.svg"
       alt="Inuv8 Studios"
+      width={25}
+      height={25}
       className={`w-25 h-25 ${className}`}
     />
   );

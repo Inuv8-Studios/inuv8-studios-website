@@ -1,6 +1,6 @@
 import HeroSection from "@/components/dreams/hero-section";
 import Game from "@/components/dreams/game";
-import CallToAction from "@/components/call-to-action";
+import CallToAction from "@/components/landing/call-to-action";
 import FooterSection from "@/components/footer";
 import { ImageDivider } from "@/components/image-line";
 

@@ -1,7 +1,7 @@
-import HeroSection from "@/components/hero-section";
-import AboutSection from "@/components/about-us";
-import Building from "@/components/building";
-import CallToAction from "@/components/call-to-action";
+import HeroSection from "@/components/landing/hero-section";
+import AboutSection from "@/components/landing/about-us";
+import Building from "@/components/landing/building";
+import CallToAction from "@/components/landing/call-to-action";
 import FooterSection from "@/components/footer";
 import { ImageDivider } from "@/components/image-line";
 

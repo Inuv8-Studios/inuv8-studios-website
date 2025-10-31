@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { HeroHeader } from "@/components/hero8-header";
 import { HeroBackground } from "@/components/hero-background";
-import { PartnerSlider } from "./partner-slider";
+import { PlatformsSlider } from "../platforms-slider";
 
 export default function HeroSection() {
   const bgImages = ["/images/background-3.png", "/images/background-2.png"];
@@ -23,7 +23,8 @@ export default function HeroSection() {
     },
     {
       src: "/platforms/googleplay.png",
-      height: 10,
+      width: 80,
+      height: 10.5,
       alt: "Google Play",
     },
     {
@@ -31,11 +32,12 @@ export default function HeroSection() {
       height: 10,
       alt: "Apple Store",
     },
-    // {
-    //   src: "/platforms/arvr.png",
-    //   height: 5,
-    //   alt: "AR/VR",
-    // },
+    {
+      src: "/platforms/arvr.png",
+      width: 60,
+      height: 7,
+      alt: "AR/VR",
+    },
   ];
 
   return (
@@ -67,7 +69,7 @@ export default function HeroSection() {
 
                 <div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
                   <Button asChild size="lg" className="px-5 text-base">
-                    <Link href="/team">
+                    <Link href="/build-with-us">
                       <span className="text-nowrap">Build with Us</span>
                     </Link>
                   </Button>
@@ -92,11 +94,11 @@ export default function HeroSection() {
           <div className="group relative m-auto max-w-6xl px-6">
             <div className="flex flex-col items-center md:flex-row">
               <div className="md:max-w-44 md:border-r md:pr-6">
-                <p className="text-end text-sm">We&apos;re Build For</p>
+                <p className="text-end text-sm">We Build for</p>
               </div>
 
               <div className="relative py-6 md:w-[calc(100%-11rem)]">
-                <PartnerSlider
+                <PlatformsSlider
                   logos={partnerLogos}
                   speed={40}
                   speedOnHover={20}

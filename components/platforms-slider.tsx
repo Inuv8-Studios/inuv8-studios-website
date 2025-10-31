@@ -9,11 +9,12 @@ import Image from "next/image";
 export type LogoItem = {
   src: string;
   alt?: string;
+  width?: number;
   height?: number; // visual height in px (kept as tailwind h- class fallback)
   className?: string; // optional additional classes
 };
 
-type PartnerSliderProps = {
+type PlatformSliderProps = {
   logos: LogoItem[];
   speed?: number;
   speedOnHover?: number;
@@ -21,13 +22,13 @@ type PartnerSliderProps = {
   className?: string;
 };
 
-export function PartnerSlider({
+export function PlatformsSlider({
   logos,
   speed = 40,
   speedOnHover = 20,
   gap = 112,
   className = "",
-}: PartnerSliderProps) {
+}: PlatformSliderProps) {
   return (
     <div className={`relative w-full ${className}`}>
       <InfiniteSlider speedOnHover={speedOnHover} speed={speed} gap={gap}>
@@ -39,6 +40,7 @@ export function PartnerSlider({
               className={`mx-auto h-${logo.height ?? 5} w-auto dark:invert ${
                 logo.className ?? ""
               }`}
+              width={logo.width ?? 40}
               height={logo.height ?? 20}
               loading={idx === 0 ? "eager" : "lazy"}
             />
