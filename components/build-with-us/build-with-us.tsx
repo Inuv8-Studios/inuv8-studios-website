@@ -243,20 +243,25 @@ export default function BuildWithUsContact() {
               </div>
             </div>
 
-            <div className="mt-4 flex justify-centre gap-4">
-              <div className="mt-2 flex gap-4">
+            <div className="mt-4 flex justify-center">
+              <div className="mt-2 flex flex-wrap gap-4 w-full">
                 {/* Submit button */}
                 <Button
                   type="submit"
                   size="lg"
                   disabled={loading}
-                  className="min-w-[150px]"
+                  className="flex-1 min-w-[150px] sm:flex-none sm:w-auto"
                 >
                   {loading ? "Sending..." : "Submit Inquiry"}
                 </Button>
 
                 {/* Fallback email button */}
-                <Button asChild size="lg" variant="outline">
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="flex-1 min-w-[150px] sm:flex-none sm:w-auto"
+                >
                   <Link
                     href="#"
                     onClick={(e) => {
