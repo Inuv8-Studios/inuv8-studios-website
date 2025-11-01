@@ -113,7 +113,7 @@ export default function TeamSection() {
           <div className="mt-6 sm:mt-0">
             <p>
               An Indie studio crafting powerful stories through art, animation,
-              and game development — driven by young creatives with over 15
+              and game development — driven by young creatives with over 25
               years of combined experience.
             </p>
           </div>
