@@ -10,16 +10,16 @@ export default function CallToAction() {
             Let&apos;s get you in.
           </h2>
           <p className="mt-4">
-            Experience The Surreal and Magical Journey Through Dreams...
+            Experience The Surreal and Magical Journey Through Games...
           </p>
 
           <div className="mt-12 flex flex-wrap justify-center gap-4">
             <Button asChild size="lg">
               <Link
-                href="https://inuv8-studios.itch.io/midnight-dreams"
+                href="https://inuv8-studios.itch.io/"
                 target="_blank"
               >
-                <span>Play Demo</span>
+                <span>Play A Demo</span>
               </Link>
             </Button>
 

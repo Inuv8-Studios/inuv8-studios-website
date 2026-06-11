@@ -8,7 +8,7 @@ import { HeroBackground } from "@/components/hero-background";
 import { PlatformsSlider } from "../platforms-slider";
 
 export default function HeroSection() {
-  const bgImages = ["/images/background-3.png", "/images/background-2.png"];
+  const bgImages = ["/images/game-on.jpg", "/images/background-2.png"];
 
   const partnerLogos = [
     {
@@ -21,7 +21,7 @@ export default function HeroSection() {
       height: 9,
       alt: "Unreal Engine",
     },
-    {
+    { 
       src: "/platforms/googleplay.png",
       width: 80,
       height: 10.5,
@@ -45,7 +45,7 @@ export default function HeroSection() {
       <HeroHeader />
       <main className="overflow-x-hidden relative">
         {/* background crossfade component */}
-        <HeroBackground images={bgImages} interval={7000} transitionMs={900} />
+        <HeroBackground images={bgImages} interval={7000} transitionMs={200} />
 
         <section>
           {/* gradient overlay that fades to black or white at the bottom */}
@@ -73,7 +73,7 @@ export default function HeroSection() {
                       <span className="text-nowrap">Build with Us</span>
                     </Link>
                   </Button>
-                  <Button
+                  {/* <Button
                     key={2}
                     asChild
                     size="lg"
@@ -83,7 +83,7 @@ export default function HeroSection() {
                     <Link href="/dreams">
                       <span className="text-nowrap">Check Out Dreams</span>
                     </Link>
-                  </Button>
+                  </Button> */}
                 </div>
               </div>
             </div>

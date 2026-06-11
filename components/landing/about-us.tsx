@@ -20,7 +20,7 @@ export default function AboutSection() {
               <span className="font-semibold text-accent-foreground">
                 Inuv8 Studios{" "}
               </span>
-              was born from a shared vision — to build worlds that blend art,
+              was born from a shared vision to build worlds that blend art,
               emotion, and imagination into unforgettable experiences.
             </p>
 
@@ -35,15 +35,15 @@ export default function AboutSection() {
 
             <p className="text-muted-foreground leading-relaxed">
               Our key talent comes from across entertainment and production
-              studios — artists, developers, designers, and writers united by
+              studios: artists, developers, designers, and writers united by
               one goal: crafting immersive stories that connect and inspire.
             </p>
 
             <p className="text-muted-foreground leading-relaxed">
               <span className="font-semibold text-accent-foreground">
-                Midnight Dreams
+                We are activelly
               </span>{" "}
-              will be our first commercial project — a milestone that represents
+              building our first commercial project; a milestone that represents
               everything we’ve learned and loved across collaborations with
               multiple clients and external studios.
             </p>
@@ -51,12 +51,12 @@ export default function AboutSection() {
             <blockquote className="mt-8 border-l-4 pl-4 italic text-muted-foreground">
               <p>
                 “The team continues to grow, as more artists, developers, and
-                creatives join us — expanding not just a project, but a shared
+                creatives join us; expanding not just a project, but a shared
                 dream.”
               </p>
               <div className="mt-6 space-y-3">
                 <cite className="block font-medium not-italic">
-                  The Midnight Dreams Team
+                  The Inuv8 Studios Team
                 </cite>
               </div>
             </blockquote>
@@ -66,7 +66,7 @@ export default function AboutSection() {
           <div className="relative mb-2 sm:mb-0">
             <div className="aspect-[76/80] relative rounded-top-2xl overflow-hidden">
               <Image
-                src="/images/background-2.png"
+                src="/images/team-promo-image.png"
                 alt="Teams Promo Image"
                 fill
                 className="object-cover object-top justify-center"

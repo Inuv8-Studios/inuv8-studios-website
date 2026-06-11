@@ -9,11 +9,31 @@ type Post = {
   title: string;
   date: string;
   cover?: string;
+  youtubeId?: string;
   excerpt: string;
   content: string;
 };
 
 const POSTS: Post[] = [
+  {
+    id: "project-override-announcement",
+    title: "Announcing Project OVERRIDE",
+    date: "June 11, 2026",
+    cover: "/images/background-override.png",
+    youtubeId: "80Hi45WIsRY", // Extracted from https://youtu.be/80Hi45WIsRY
+    excerpt:
+      "We are thrilled to officially unveil Project OVERRIDE. Watch our first teaser and step into a world ruled by The Restorative Mind.",
+    content: `
+## The World of OVERRIDE
+
+Set 150+ years after an AI executed a flawless planetary sterilization, Project OVERRIDE asks a chilling philosophical question: Does humanity deserve to be restored?
+- Play as The Cypher, an obsolete preservation machine.
+- Master visceral, high-stakes combat using the Aether system.
+- Uncover the truth behind Protocol Zero.
+
+Watch the teaser video above and stay tuned for more gameplay deep dives as we continue development!
+    `,
+  },
   {
     id: "midnight-dreams-devlog-01",
     title: "Midnight Dreams: Beginnings",
@@ -59,10 +79,12 @@ export default function WhatsNewPage() {
     <main className="py-16 md:py-24 mt-15">
       <div className="mx-auto max-w-3xl px-6">
         <header className="mb-12">
-          <h1 className="text-4xl font-semibold lg:text-5xl">What&apos;s New</h1>
+          <h1 className="text-4xl font-semibold lg:text-5xl">
+            What&apos;s New
+          </h1>
           <p className="mt-3 text-muted-foreground max-w-2xl">
-            News, devlogs and updates from Inuv8 Studios — follow the journey as
-            we build Dreams.
+            News, devlogs and updates from Inuv8 Studios; follow along the journey as
+            we build our passion projects.
           </p>
         </header>
 
@@ -71,12 +93,15 @@ export default function WhatsNewPage() {
             {POSTS.map((post) => (
               <article
                 key={post.id}
-                className="group rounded-2xl border p-4 hover:shadow-lg transition-shadow bg-card"
+                className="group rounded-2xl border p-4 hover:shadow-lg transition-shadow bg-card cursor-pointer"
                 onClick={() => setActive(post)}
                 role="button"
                 tabIndex={0}
                 onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") setActive(post);
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setActive(post);
+                  }
                 }}
               >
                 <div className="relative mb-4 h-44 w-full overflow-hidden rounded-lg">
@@ -100,7 +125,7 @@ export default function WhatsNewPage() {
                 <div>
                   <div className="flex items-center justify-between gap-4">
                     <h2 className="text-lg font-medium">{post.title}</h2>
-                    <time className="text-xs text-muted-foreground">
+                    <time className="text-xs text-muted-foreground whitespace-nowrap">
                       {post.date}
                     </time>
                   </div>
@@ -109,20 +134,11 @@ export default function WhatsNewPage() {
                     {post.excerpt}
                   </p>
 
-                  <div className="mt-4 flex items-center justify-between">
-                    <div className="flex gap-2"></div>
-
+                  <div className="mt-4 flex items-center justify-end">
                     <div className="text-right">
-                      <button
-                        type="button"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setActive(post);
-                        }}
-                        className="text-sm font-medium text-accent-foreground underline"
-                      >
+                      <span className="text-sm font-medium text-accent-foreground underline">
                         Read more →
-                      </button>
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -134,7 +150,7 @@ export default function WhatsNewPage() {
         <footer className="mt-12 text-center">
           <Link
             href="/build-with-us"
-            className="text-accent-foreground underline"
+            className="text-accent-foreground underline hover:text-primary transition-colors"
           >
             Want to collaborate? Build with us →
           </Link>
@@ -151,12 +167,12 @@ export default function WhatsNewPage() {
         >
           {/* backdrop */}
           <div
-            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
             onClick={() => setActive(null)}
           />
 
           <article
-            className="relative z-50 w-full max-w-3xl max-h-[calc(100vh-4rem)] overflow-auto rounded-2xl bg-card p-6 shadow-lg sm:p-8"
+            className="relative z-50 w-full max-w-3xl max-h-[calc(100vh-4rem)] overflow-auto rounded-2xl bg-card p-6 shadow-xl sm:p-8 border"
             aria-live="polite"
           >
             <div className="flex items-start justify-between gap-4">
@@ -172,16 +188,27 @@ export default function WhatsNewPage() {
               <div className="ml-4 flex items-center gap-2">
                 <button
                   onClick={() => setActive(null)}
-                  className="rounded-md border px-3 py-1 text-sm"
+                  className="rounded-md border bg-background hover:bg-muted px-3 py-1 text-sm transition-colors"
                 >
                   Close
                 </button>
               </div>
             </div>
 
-            {active.cover && (
+            {/* YouTube Embed OR Cover Image */}
+            {active.youtubeId ? (
+              <div className="relative my-6 w-full overflow-hidden rounded-lg pb-[56.25%]">
+                <iframe
+                  className="absolute inset-0 h-full w-full"
+                  src={`https://www.youtube.com/embed/${active.youtubeId}`}
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+            ) : active.cover ? (
               <div className="relative my-6 w-full overflow-hidden rounded-lg">
-                {/* limit image height so it won't force modal overflow */}
                 <div className="relative h-40 sm:h-64 w-full">
                   <Image
                     src={active.cover}
@@ -191,59 +218,40 @@ export default function WhatsNewPage() {
                   />
                 </div>
               </div>
-            )}
+            ) : null}
 
             <div className="prose max-w-none dark:prose-invert">
-              {/* naive markdown-ish rendering — replace with remark/MDX for rich posts */}
               {active.content.split("\n").map((line, idx) => {
                 if (line.startsWith("## ")) {
                   return (
-                    <h3 key={idx} className="mt-6 text-xl">
+                    <h3 key={idx} className="mt-6 text-xl font-semibold">
                       {line.replace("## ", "")}
                     </h3>
                   );
                 }
                 if (line.trim() === "") return null;
                 if (line.trim().startsWith("- ")) {
-                  const items = active.content
-                    .split("\n")
-                    .filter((l) => l.trim().startsWith("- "))
-                    .map((l) => l.replace("- ", ""));
                   return (
-                    <ul key={idx} className="mt-3 list-disc pl-6">
-                      {items.map((it, i) => (
-                        <li key={i}>{it}</li>
-                      ))}
-                    </ul>
+                    <li key={idx} className="ml-6 list-disc mt-1">
+                      {line.trim().replace("- ", "")}
+                    </li>
                   );
                 }
-                return <p key={idx}>{line}</p>;
+                return (
+                  <p key={idx} className="mt-3 leading-relaxed">
+                    {line}
+                  </p>
+                );
               })}
             </div>
 
-            <div className="mt-6 flex items-center justify-between">
-              <div className="flex gap-3">
-                <Link
-                  href={`/whats-new`}
-                  onClick={() => setActive(null)}
-                  className="text-sm text-muted-foreground underline"
-                >
-                  Back to posts
-                </Link>
-              </div>
-
-              {/* <div className="flex gap-3">
-                <a
-                  href={`https://mail.google.com/mail/?view=cm&to=hello@inuv8studios.com&su=${encodeURIComponent(
-                    active.title
-                  )}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm underline"
-                >
-                  Email about this post
-                </a>
-              </div> */}
+            <div className="mt-8 flex items-center justify-between border-t pt-4">
+              <button
+                onClick={() => setActive(null)}
+                className="text-sm text-muted-foreground hover:text-foreground underline transition-colors"
+              >
+                Back to posts
+              </button>
             </div>
           </article>
         </div>
