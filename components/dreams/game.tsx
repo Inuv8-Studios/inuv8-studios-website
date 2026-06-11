@@ -8,7 +8,7 @@ export default function Game() {
           {/* Left Visual */}
           <div className="aspect-[76/120] relative rounded-top-2xl overflow-hidden">
             <Image
-              src="/images/promo-image.png"
+              src="/images/dreams-promo-image.png"
               alt="Dreams Promo Image"
               fill
               className="object-cover object-top rounded-2xl"
