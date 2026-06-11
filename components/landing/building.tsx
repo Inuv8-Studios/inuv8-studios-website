@@ -39,7 +39,7 @@ export default function Building() {
 
             <p className="text-muted-foreground leading-relaxed">
               <span className="font-semibold text-accent-foreground">
-                “Project OVERRIDE”
+                &quot;Project OVERRIDE&quot;
               </span>{" "}
               is a premium, finite experience exploring themes of extinction,
               morality, and the terrifying outcomes of pure logic. Playing as
@@ -84,7 +84,7 @@ export default function Building() {
 
             <p className="text-muted-foreground leading-relaxed">
               <span className="font-semibold text-accent-foreground">
-                “Midnight Dreams”
+                &quot;Midnight Dreams&quot;
               </span>{" "}
               isn’t just to tell a story; it is created for you to be part of
               the story as you solve puzzles, fend off nightmarish enemies,
