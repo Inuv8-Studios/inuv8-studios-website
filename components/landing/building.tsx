@@ -34,7 +34,7 @@ export default function Building() {
               </span>
               , set on Earth 150+ years after a planetary AI known as The
               Restorative Mind executed a flawless sterilization of humanity in
-              order to "preserve life."
+              order to &quot;preserve life.&quot;
             </p>
 
             <p className="text-muted-foreground leading-relaxed">
