@@ -40,8 +40,8 @@ export default function Game() {
               tasked with protecting the biosphere. Armed with a forbidden
               contradiction known as Protocol Zero, you will navigate the
               silent, overgrown ruins of a hyper-corporate society, acting as a
-              judge of humanity's past while facing the Restorative Mind's
-              increasingly aggressive forces.
+              judge of humanity&apos;s past while facing the Restorative
+              Mind&apos;s increasingly aggressive forces.
             </p>
 
             <p className="text-muted-foreground leading-relaxed">

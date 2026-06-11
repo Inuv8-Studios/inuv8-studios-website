@@ -50,9 +50,9 @@ export default function AboutSection() {
 
             <blockquote className="mt-8 border-l-4 pl-4 italic text-muted-foreground">
               <p>
-                “The team continues to grow, as more artists, developers, and
+                &quot;The team continues to grow, as more artists, developers, and
                 creatives join us; expanding not just a project, but a shared
-                dream.”
+                dream.&quot;
               </p>
               <div className="mt-6 space-y-3">
                 <cite className="block font-medium not-italic">
