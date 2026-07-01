@@ -109,21 +109,21 @@ export default function TeamSection() {
           creating immersive, systems driven interactive experiences for a
           global audience. We believe great games are built by combining
           compelling gameplay, meaningful storytelling, and scalable technology.
-          Our current focus is Project OVERRIDE, an original sci-fi action RPG
-          that explores humanity's relationship with artificial intelligence in
-          a world shaped by corporate control and technological collapse.
-          Alongside our flagship title, we also develop community initiatives
-          that encourage collaboration, experimentation, and innovation within
-          the game development ecosystem. Our team brings together expertise
-          across game design, software engineering, 3D art, animation, UI/UX,
-          audio, and production. We operate with an iterative development
-          approach, emphasizing rapid prototyping, player feedback, and
-          continuous improvement to deliver polished, high-quality experiences.
-          Beyond building games, we are committed to establishing sustainable
-          development pipelines, adopting modern technologies, and growing into
-          a studio capable of delivering multiple commercial titles over time.
-          We see every project as an opportunity to improve our technical
-          capabilities while creating games that resonate with players
+          Our current focus is Project OVERRIDE, an original sci-fi action Adventure
+          that explores humanity&apos;s relationship with artificial
+          intelligence in a world shaped by corporate control and technological
+          collapse. Alongside our flagship title, we also develop community
+          initiatives that encourage collaboration, experimentation, and
+          innovation within the game development ecosystem. Our team brings
+          together expertise across game design, software engineering, 3D art,
+          animation, UI/UX, audio, and production. We operate with an iterative
+          development approach, emphasizing rapid prototyping, player feedback,
+          and continuous improvement to deliver polished, high-quality
+          experiences. Beyond building games, we are committed to establishing
+          sustainable development pipelines, adopting modern technologies, and
+          growing into a studio capable of delivering multiple commercial titles
+          over time. We see every project as an opportunity to improve our
+          technical capabilities while creating games that resonate with players
           worldwide.
         </div>
         <div className="mt-24 gap-4 sm:grid sm:grid-cols-2">
