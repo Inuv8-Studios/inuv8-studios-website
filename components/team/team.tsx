@@ -104,6 +104,28 @@ export default function TeamSection() {
   return (
     <section className="py-32">
       <div className="mx-auto max-w-5xl px-6">
+        <div className="mt-24 gap-4">
+          Inuv8 Studios is an independent game development studio focused on
+          creating immersive, systems driven interactive experiences for a
+          global audience. We believe great games are built by combining
+          compelling gameplay, meaningful storytelling, and scalable technology.
+          Our current focus is Project OVERRIDE, an original sci-fi action RPG
+          that explores humanity's relationship with artificial intelligence in
+          a world shaped by corporate control and technological collapse.
+          Alongside our flagship title, we also develop community initiatives
+          that encourage collaboration, experimentation, and innovation within
+          the game development ecosystem. Our team brings together expertise
+          across game design, software engineering, 3D art, animation, UI/UX,
+          audio, and production. We operate with an iterative development
+          approach, emphasizing rapid prototyping, player feedback, and
+          continuous improvement to deliver polished, high-quality experiences.
+          Beyond building games, we are committed to establishing sustainable
+          development pipelines, adopting modern technologies, and growing into
+          a studio capable of delivering multiple commercial titles over time.
+          We see every project as an opportunity to improve our technical
+          capabilities while creating games that resonate with players
+          worldwide.
+        </div>
         <div className="mt-24 gap-4 sm:grid sm:grid-cols-2">
           <div className="sm:w-2/5">
             <h2 className="text-title text-3xl font-bold sm:text-4xl">
@@ -130,7 +152,9 @@ export default function TeamSection() {
                   className="group overflow-hidden"
                   // pointer device hover preview only when nothing is active:
                   onMouseEnter={() => activeIndex === null && setHoverIndex(i)}
-                  onMouseLeave={() => activeIndex === null && setHoverIndex(null)}
+                  onMouseLeave={() =>
+                    activeIndex === null && setHoverIndex(null)
+                  }
                 >
                   {/* Use a button-like wrapper so clicks are accessible on mobile */}
                   <div
@@ -142,13 +166,11 @@ export default function TeamSection() {
                     aria-pressed={activeIndex === i}
                   >
                     <Image
-                      className={
-                        `w-full object-cover object-top rounded-md transition-all duration-500 ${
-                          active ? "grayscale-0" : "grayscale"
-                        } ${active ? "group-hover:rounded-xl" : ""} ${
-                          active ? "h-[22.5rem] lg:h-[22.5rem]" : "h-96"
-                        }`
-                      }
+                      className={`w-full object-cover object-top rounded-md transition-all duration-500 ${
+                        active ? "grayscale-0" : "grayscale"
+                      } ${active ? "group-hover:rounded-xl" : ""} ${
+                        active ? "h-[22.5rem] lg:h-[22.5rem]" : "h-96"
+                      }`}
                       src={m.src}
                       alt={m.name}
                       width={826}
