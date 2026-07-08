@@ -61,11 +61,19 @@ const members: Member[] = [
     linkedin: "https://www.linkedin.com/in/segun-olu-abe-55133626a/",
   },
   {
+    id: "unsigned",
+    name: "Daniel Okpeta",
+    role: "Game Developer",
+    src: "/team/Unsigned.jpeg",
+    indexLabel: "_07",
+    linkedin: "https://www.linkedin.com/in/unsigned/",
+  },
+  {
     id: "joel",
     name: "Agbamu Joel",
     role: "Character Artist",
     src: "/team/Joel.png",
-    indexLabel: "_07",
+    indexLabel: "_08",
     linkedin: "https://www.linkedin.com/in/joel-agbamu-2052521b2/",
   },
   {
@@ -73,7 +81,7 @@ const members: Member[] = [
     name: "Adegoke Oyinlola",
     role: "Environment Artist",
     src: "/team/Oyin.png",
-    indexLabel: "_08",
+    indexLabel: "_09",
     linkedin: "https://www.linkedin.com/in/oyinlolaadegoke1/",
   },
 ];
@@ -104,28 +112,6 @@ export default function TeamSection() {
   return (
     <section className="py-32">
       <div className="mx-auto max-w-5xl px-6">
-        <div className="mt-24 gap-4">
-          Inuv8 Studios is an independent game development studio focused on
-          creating immersive, systems driven interactive experiences for a
-          global audience. We believe great games are built by combining
-          compelling gameplay, meaningful storytelling, and scalable technology.
-          Our current focus is Project OVERRIDE, an original sci-fi action Adventure
-          that explores humanity&apos;s relationship with artificial
-          intelligence in a world shaped by corporate control and technological
-          collapse. Alongside our flagship title, we also develop community
-          initiatives that encourage collaboration, experimentation, and
-          innovation within the game development ecosystem. Our team brings
-          together expertise across game design, software engineering, 3D art,
-          animation, UI/UX, audio, and production. We operate with an iterative
-          development approach, emphasizing rapid prototyping, player feedback,
-          and continuous improvement to deliver polished, high-quality
-          experiences. Beyond building games, we are committed to establishing
-          sustainable development pipelines, adopting modern technologies, and
-          growing into a studio capable of delivering multiple commercial titles
-          over time. We see every project as an opportunity to improve our
-          technical capabilities while creating games that resonate with players
-          worldwide.
-        </div>
         <div className="mt-24 gap-4 sm:grid sm:grid-cols-2">
           <div className="sm:w-2/5">
             <h2 className="text-title text-3xl font-bold sm:text-4xl">
@@ -135,7 +121,7 @@ export default function TeamSection() {
           <div className="mt-6 sm:mt-0">
             <p>
               An Indie studio crafting powerful stories through art, animation,
-              and game development — driven by young creatives with over 25
+              and game development; driven by young creatives with over 25
               years of combined experience.
             </p>
           </div>
@@ -219,6 +205,28 @@ export default function TeamSection() {
               );
             })}
           </div>
+        </div>
+        <div className="mt-24 gap-4">
+          Inuv8 Studios is an independent game development studio focused on
+          creating immersive, systems driven interactive experiences for a
+          global audience. We believe great games are built by combining
+          compelling gameplay, meaningful storytelling, and scalable technology.
+          Our current focus is Project OVERRIDE, an original sci-fi action Adventure
+          that explores humanity&apos;s relationship with artificial
+          intelligence in a world shaped by corporate control and technological
+          collapse. Alongside our flagship title, we also develop community
+          initiatives that encourage collaboration, experimentation, and
+          innovation within the game development ecosystem. Our team brings
+          together expertise across game design, software engineering, 3D art,
+          animation, UI/UX, audio, and production. We operate with an iterative
+          development approach, emphasizing rapid prototyping, player feedback,
+          and continuous improvement to deliver polished, high-quality
+          experiences. Beyond building games, we are committed to establishing
+          sustainable development pipelines, adopting modern technologies, and
+          growing into a studio capable of delivering multiple commercial titles
+          over time. We see every project as an opportunity to improve our
+          technical capabilities while creating games that resonate with players
+          worldwide.
         </div>
       </div>
     </section>
