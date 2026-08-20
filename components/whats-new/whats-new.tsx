@@ -10,17 +10,62 @@ type Post = {
   date: string;
   cover?: string;
   youtubeId?: string;
+  steamUrl?: string;
   excerpt: string;
   content: string;
 };
 
 const POSTS: Post[] = [
   {
+    id: "project-override-steam-update",
+    title: "Project OVERRIDE — Early Gameplay Update",
+    date: "August 20, 2026",
+    cover: "/images/wishlist_steam_video.png",
+    youtubeId: "DWF3CVMxWcY",
+    steamUrl: "https://store.steampowered.com/app/5022440/Project_OVERRIDE/",
+    excerpt:
+      "A look at Project OVERRIDE's combat, systems and early development — and the Steam page is now live. Wishlist the game and follow the journey.",
+    content: `
+## Project OVERRIDE — Early Gameplay & Development Update
+
+It's been a while since we've shared a proper look at Project OVERRIDE.
+
+A lot has been happening behind the scenes as we continue shaping the world, gameplay systems and overall direction of the game.
+
+This update gives you an early look at some of what we've been building so far, including:
+
+- Early combat systems and melee gameplay.
+- Core gameplay systems and interactions.
+- Exploration and environmental design.
+- Early development and concept gameplay.
+- Some of the ideas currently shaping the experience.
+
+This footage represents an early stage of development, and many elements are still evolving as we continue to build and refine the game.
+
+## The Journey Continues
+
+Project OVERRIDE is a narrative-driven sci-fi action-adventure set in a world shaped by the aftermath of humanity's greatest technological ambition.
+
+You play as The Cypher, an obsolete preservation machine awakening in a world where humanity is gone and the machines that remain continue to follow the directives of a system known as The Restorative Mind.
+
+We're still early in the journey, but the foundations are taking shape.
+
+## Now on Steam
+
+The official Project OVERRIDE Steam page is now live.
+
+If you'd like to follow development, adding the game to your Steam Wishlist is the best way to support the project and stay informed as we get closer to release.
+
+Thank you for following along with us as we build OVERRIDE.
+    `,
+  },
+
+  {
     id: "project-override-announcement",
     title: "Announcing Project OVERRIDE",
     date: "June 11, 2026",
     cover: "/images/background-override.png",
-    youtubeId: "80Hi45WIsRY", // Extracted from https://youtu.be/80Hi45WIsRY
+    youtubeId: "80Hi45WIsRY",
     excerpt:
       "We are thrilled to officially unveil Project OVERRIDE. Watch our first teaser and step into a world ruled by The Restorative Mind.",
     content: `
@@ -34,42 +79,44 @@ Set 150+ years after an AI executed a flawless planetary sterilization, Project 
 Watch the teaser video above and stay tuned for more gameplay deep dives as we continue development!
     `,
   },
-  {
-    id: "midnight-dreams-devlog-01",
-    title: "Midnight Dreams: Beginnings",
-    date: "September 26, 2025",
-    cover: "/images/background-3.jpg",
-    excerpt:
-      "We formed Inuv8 in mid-2022 — this devlog covers our early design decisions, art direction and the engines powering our dreamscapes.",
-    content: `
-## Beginnings
 
-We started as a small group of creatives with a shared love for storytelling. In this devlog we discuss:
-- why we chose an adventure-puzzle platformer,
-- early prototypes and tools,
-- art style explorations and palette tests.
+//   {
+//     id: "midnight-dreams-devlog-01",
+//     title: "Midnight Dreams: Beginnings",
+//     date: "September 26, 2025",
+//     cover: "/images/background-3.jpg",
+//     excerpt:
+//       "We formed Inuv8 in mid-2022 — this devlog covers our early design decisions, art direction and the engines powering our dreamscapes.",
+//     content: `
+// ## Beginnings
 
-Stay tuned for screenshots, concept sketches and build notes.
-    `,
-  },
-  {
-    id: "studio-growth-2024",
-    title: "Studio Update — Team & Growth",
-    date: "October 10, 2025",
-    cover: "/posts/team-growth.jpg",
-    excerpt:
-      "Our creative collective has grown — meet a few faces joining the Midnight Dreams project and hear about how we collaborate.",
-    content: `
-## Team & Growth
+// We started as a small group of creatives with a shared love for storytelling. In this devlog we discuss:
+// - why we chose an adventure-puzzle platformer,
+// - early prototypes and tools,
+// - art style explorations and palette tests.
 
-Over the last year we've welcomed artists, programmers and writers from production backgrounds. Highlights:
-- pipeline improvements
-- collaboration tooling
-- current priorities for hiring
+// Stay tuned for screenshots, concept sketches and build notes.
+//     `,
+//   },
 
-If you'd like to join or collaborate, send us a note via the contact page.
-    `,
-  },
+//   {
+//     id: "studio-growth-2024",
+//     title: "Studio Update — Team & Growth",
+//     date: "October 10, 2025",
+//     cover: "/posts/team-growth.jpg",
+//     excerpt:
+//       "Our creative collective has grown — meet a few faces joining the Midnight Dreams project and hear about how we collaborate.",
+//     content: `
+// ## Team & Growth
+
+// Over the last year we've welcomed artists, programmers and writers from production backgrounds. Highlights:
+// - pipeline improvements
+// - collaboration tooling
+// - current priorities for hiring
+
+// If you'd like to join or collaborate, send us a note via the contact page.
+//     `,
+//   },
 ];
 
 export default function WhatsNewPage() {
@@ -82,9 +129,10 @@ export default function WhatsNewPage() {
           <h1 className="text-4xl font-semibold lg:text-5xl">
             What&apos;s New
           </h1>
+
           <p className="mt-3 text-muted-foreground max-w-2xl">
-            News, devlogs and updates from Inuv8 Studios; follow along the journey as
-            we build our passion projects.
+            News, devlogs and updates from Inuv8 Studios; follow along the
+            journey as we build our passion projects.
           </p>
         </header>
 
@@ -125,6 +173,7 @@ export default function WhatsNewPage() {
                 <div>
                   <div className="flex items-center justify-between gap-4">
                     <h2 className="text-lg font-medium">{post.title}</h2>
+
                     <time className="text-xs text-muted-foreground whitespace-nowrap">
                       {post.date}
                     </time>
@@ -157,7 +206,7 @@ export default function WhatsNewPage() {
         </footer>
       </div>
 
-      {/* Modal for active post - fits viewport and scrolls when content is long */}
+      {/* Modal for active post */}
       {active && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8"
@@ -165,7 +214,7 @@ export default function WhatsNewPage() {
           aria-modal="true"
           aria-labelledby="post-title"
         >
-          {/* backdrop */}
+          {/* Backdrop */}
           <div
             className="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
             onClick={() => setActive(null)}
@@ -180,6 +229,7 @@ export default function WhatsNewPage() {
                 <h2 id="post-title" className="text-2xl font-semibold">
                   {active.title}
                 </h2>
+
                 <time className="block text-sm text-muted-foreground mt-1">
                   {active.date}
                 </time>
@@ -201,7 +251,7 @@ export default function WhatsNewPage() {
                 <iframe
                   className="absolute inset-0 h-full w-full"
                   src={`https://www.youtube.com/embed/${active.youtubeId}`}
-                  title="YouTube video player"
+                  title={active.title}
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
@@ -220,26 +270,59 @@ export default function WhatsNewPage() {
               </div>
             ) : null}
 
+            {/* Steam / Video Actions */}
+            {(active.steamUrl || active.youtubeId) && (
+              <div className="mb-8 flex flex-col sm:flex-row gap-3">
+                {active.steamUrl && (
+                  <a
+                    href={active.steamUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center rounded-lg bg-[#1b2838] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#2a475e]"
+                  >
+                    Wishlist Project OVERRIDE on Steam →
+                  </a>
+                )}
+
+                {active.youtubeId && (
+                  <a
+                    href={`https://youtu.be/${active.youtubeId}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center rounded-lg border bg-background px-5 py-3 text-sm font-semibold transition-colors hover:bg-muted"
+                  >
+                    Watch on YouTube →
+                  </a>
+                )}
+              </div>
+            )}
+
+            {/* Post Content */}
             <div className="prose max-w-none dark:prose-invert">
               {active.content.split("\n").map((line, idx) => {
-                if (line.startsWith("## ")) {
+                const trimmedLine = line.trim();
+
+                if (trimmedLine.startsWith("## ")) {
                   return (
                     <h3 key={idx} className="mt-6 text-xl font-semibold">
-                      {line.replace("## ", "")}
+                      {trimmedLine.replace("## ", "")}
                     </h3>
                   );
                 }
-                if (line.trim() === "") return null;
-                if (line.trim().startsWith("- ")) {
+
+                if (trimmedLine === "") return null;
+
+                if (trimmedLine.startsWith("- ")) {
                   return (
                     <li key={idx} className="ml-6 list-disc mt-1">
-                      {line.trim().replace("- ", "")}
+                      {trimmedLine.replace("- ", "")}
                     </li>
                   );
                 }
+
                 return (
                   <p key={idx} className="mt-3 leading-relaxed">
-                    {line}
+                    {trimmedLine}
                   </p>
                 );
               })}
@@ -252,6 +335,17 @@ export default function WhatsNewPage() {
               >
                 Back to posts
               </button>
+
+              {active.steamUrl && (
+                <a
+                  href={active.steamUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium text-accent-foreground hover:text-primary underline transition-colors"
+                >
+                  View on Steam →
+                </a>
+              )}
             </div>
           </article>
         </div>
