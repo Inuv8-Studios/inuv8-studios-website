@@ -17,6 +17,32 @@ type Post = {
 
 const POSTS: Post[] = [
   {
+    id: "playstation-partner-announcement",
+    title: "Inuv8 Studios is an Official PlayStation Partner",
+    date: "September 2, 2026",
+    cover: "/images/inuv8_playstation.jpeg",
+    excerpt:
+      "We are incredibly proud to announce that Inuv8 Studios is officially a PlayStation Partner. Project OVERRIDE is coming to the PS5.",
+    content: `
+    ## A Major Milestone
+
+    We are thrilled to officially announce that Inuv8 Studios has secured PlayStation Partner status.
+
+    This partnership is a massive step forward for our team and confirms that our flagship sci-fi action-adventure title, Project OVERRIDE, has been officially greenlit for development on the PlayStation 5 ecosystem.
+
+    ## Next-Gen Development
+
+    With our concept officially approved, we are gearing up for the next phase of production.
+
+    What this means for our development pipeline:
+    - Commencing Development for official PS5 hardware development.
+    - Optimizing our fluid traversal and combat systems for the platform.
+    - Preparing our multi-platform release strategy.
+
+    Getting to this stage as an independent studio is a huge achievement. Thank you to everyone who has supported us on this journey. Stay tuned as we continue to build out the world of OVERRIDE.
+`,
+  },
+  {
     id: "project-override-steam-update",
     title: "Project OVERRIDE — Early Gameplay Update",
     date: "August 20, 2026",
@@ -79,44 +105,38 @@ Set 150+ years after an AI executed a flawless planetary sterilization, Project 
 Watch the teaser video above and stay tuned for more gameplay deep dives as we continue development!
     `,
   },
-
-//   {
-//     id: "midnight-dreams-devlog-01",
-//     title: "Midnight Dreams: Beginnings",
-//     date: "September 26, 2025",
-//     cover: "/images/background-3.jpg",
-//     excerpt:
-//       "We formed Inuv8 in mid-2022 — this devlog covers our early design decisions, art direction and the engines powering our dreamscapes.",
-//     content: `
-// ## Beginnings
-
-// We started as a small group of creatives with a shared love for storytelling. In this devlog we discuss:
-// - why we chose an adventure-puzzle platformer,
-// - early prototypes and tools,
-// - art style explorations and palette tests.
-
-// Stay tuned for screenshots, concept sketches and build notes.
-//     `,
-//   },
-
-//   {
-//     id: "studio-growth-2024",
-//     title: "Studio Update — Team & Growth",
-//     date: "October 10, 2025",
-//     cover: "/posts/team-growth.jpg",
-//     excerpt:
-//       "Our creative collective has grown — meet a few faces joining the Midnight Dreams project and hear about how we collaborate.",
-//     content: `
-// ## Team & Growth
-
-// Over the last year we've welcomed artists, programmers and writers from production backgrounds. Highlights:
-// - pipeline improvements
-// - collaboration tooling
-// - current priorities for hiring
-
-// If you'd like to join or collaborate, send us a note via the contact page.
-//     `,
-//   },
+  //   {
+  //     id: "midnight-dreams-devlog-01",
+  //     title: "Midnight Dreams: Beginnings",
+  //     date: "September 26, 2025",
+  //     cover: "/images/background-3.jpg",
+  //     excerpt:
+  //       "We formed Inuv8 in mid-2022 — this devlog covers our early design decisions, art direction and the engines powering our dreamscapes.",
+  //     content: `
+  // ## Beginnings
+  // We started as a small group of creatives with a shared love for storytelling. In this devlog we discuss:
+  // - why we chose an adventure-puzzle platformer,
+  // - early prototypes and tools,
+  // - art style explorations and palette tests.
+  // Stay tuned for screenshots, concept sketches and build notes.
+  //     `,
+  //   },
+  //   {
+  //     id: "studio-growth-2024",
+  //     title: "Studio Update — Team & Growth",
+  //     date: "October 10, 2025",
+  //     cover: "/posts/team-growth.jpg",
+  //     excerpt:
+  //       "Our creative collective has grown — meet a few faces joining the Midnight Dreams project and hear about how we collaborate.",
+  //     content: `
+  // ## Team & Growth
+  // Over the last year we've welcomed artists, programmers and writers from production backgrounds. Highlights:
+  // - pipeline improvements
+  // - collaboration tooling
+  // - current priorities for hiring
+  // If you'd like to join or collaborate, send us a note via the contact page.
+  //     `,
+  //   },
 ];
 
 export default function WhatsNewPage() {

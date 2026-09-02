@@ -21,6 +21,18 @@ export default function HeroSection() {
       height: 9,
       alt: "Unreal Engine",
     },
+    {
+      src: "/platforms/steam.png",
+      width: 80,
+      height: 10.5,
+      alt: "Steam",
+    },
+    {
+      src: "/platforms/playstation.png",
+      width: 80,
+      height: 10.5,
+      alt: "Playstation",
+    },
     { 
       src: "/platforms/googleplay.png",
       width: 80,
