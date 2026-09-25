@@ -10,7 +10,7 @@ const exo = Exo({
 
 export const metadata: Metadata = {
   title: "Inuv8 Studios",
-  description: "Inuv8 Studios Landing Page",
+  description: "Inuv8 Studios",
 };
 
 export default function RootLayout({
