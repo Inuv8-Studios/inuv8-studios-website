@@ -24,7 +24,7 @@ export default function PrivacySection() {
               1. Introduction
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              Welcome to Inuv8 Studios Limited (&quot;we,&quot; &quot;our,&quot;
+              Welcome to Inuv8 Studios Limited (&quot;we&quot;, &quot;our&quot;
               or &quot;us&quot;). We are a digital and game development studio
               based in Nigeria. This Privacy Policy explains how we collect,
               use, disclose, and safeguard your information when you visit our

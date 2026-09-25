@@ -28,7 +28,7 @@ export default function TermsOfServicePage() {
             </h2>
             <p>
               By accessing and using the website, games, tools, and related
-              services provided by Inuv8 Studios (&quot;we,&quot; &quot;us,&quot; or our&quot;), you
+              services provided by Inuv8 Studios (&quot;we&quot;, &quot;us&quot;, or our&quot;), you
               agree to be bound by these Terms of Service. If you do not agree
               to these terms, please do not use our services or participate in
               our game playtests.
