@@ -17,6 +17,45 @@ type Post = {
 
 const POSTS: Post[] = [
   {
+    id: "idxbox-partner-announcement",
+    title: "Inuv8 Studios Joins ID@Xbox",
+    date: "September 21, 2026",
+    cover: "/images/inuv8_xbox.jpg",
+    excerpt:
+      "We are excited to announce that Inuv8 Studios is now an ID@Xbox Partner, opening a new chapter for Project OVERRIDE and our journey toward bringing our games to Xbox.",
+    content: `
+    ## A New Chapter
+
+    We are incredibly excited to announce that Inuv8 Studios is now an official ID@Xbox Partner.
+
+    This marks another major milestone for our studio as we continue building Project OVERRIDE and expanding our plans to bring the game to players across more platforms.
+
+    Becoming part of the ID@Xbox program gives us another important step toward developing and preparing Project OVERRIDE for Xbox, alongside our existing PC and PlayStation development plans.
+
+    ## Expanding Our Reach
+
+    Our goal has always been to build games from Nigeria that can reach players around the world.
+
+    With ID@Xbox, we are continuing to expand the platform reach of Project OVERRIDE while building the foundations for a broader multi-platform release strategy.
+
+    What this means for our journey:
+    - Preparing Project OVERRIDE for Xbox development and platform requirements.
+    - Continuing to refine our combat, traversal, exploration, and core gameplay systems.
+    - Expanding our multi-platform development and release strategy.
+    - Building new relationships across the global games industry.
+
+    For an independent studio building from Nigeria, reaching another major platform is a huge milestone.
+
+    We are incredibly grateful to everyone who has supported Inuv8 Studios and Project OVERRIDE so far.
+
+    PC. PlayStation. Xbox.
+
+    Made for the world.
+
+    This is only the beginning.
+`,
+  },
+  {
     id: "playstation-partner-announcement",
     title: "Inuv8 Studios is an Official PlayStation Partner",
     date: "September 2, 2026",
