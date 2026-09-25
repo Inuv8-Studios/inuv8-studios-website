@@ -28,7 +28,7 @@ export default function TermsOfServicePage() {
             </h2>
             <p>
               By accessing and using the website, games, tools, and related
-              services provided by Inuv8 Studios ("we," "us," or "our"), you
+              services provided by Inuv8 Studios (&quot;we,&quot; &quot;us,&quot; or our&quot;), you
               agree to be bound by these Terms of Service. If you do not agree
               to these terms, please do not use our services or participate in
               our game playtests.
@@ -120,8 +120,8 @@ export default function TermsOfServicePage() {
               6. Disclaimer of Warranties
             </h2>
             <p>
-              Our games and services are provided on an "AS IS" and "AS
-              AVAILABLE" basis. Inuv8 Studios makes no warranties, expressed or
+              Our games and services are provided on an &quot;AS IS&quot; and &quot;AS
+              AVAILABLE&quot; basis. Inuv8 Studios makes no warranties, expressed or
               implied, regarding the uninterrupted availability, performance, or
               bug-free nature of our software. We reserve the right to archive,
               suspend, or discontinue any game or project at our discretion.
@@ -148,7 +148,7 @@ export default function TermsOfServicePage() {
             <p>
               We reserve the right to update or modify these Terms of Service at
               any time. We will notify users of any significant changes by
-              updating the "Last updated" date at the top of this page.
+              updating the &rdqou;Last updated&rdqou; date at the top of this page.
               Continued use of our services after such modifications constitutes
               your acknowledgment and acceptance of the updated terms.
             </p>
