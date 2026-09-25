@@ -154,19 +154,23 @@ export default function TermsOfServicePage() {
             </p>
           </section>
 
-          <section className="pt-8 border-t border-border">
-            <h2 className="text-xl font-semibold text-foreground mb-4">
+          {/* Contact Us */}
+          <div className="space-y-4 rounded-xl bg-muted/50 p-6 md:p-8 mt-12 border border-border">
+            <h2 className="text-2xl font-semibold text-accent-foreground">
               Contact Us
             </h2>
-            <p>
+            <p className="text-muted-foreground leading-relaxed">
               If you have any questions about these Terms of Service, please
-              contact us via our official social channels or by returning to our{" "}
-              <Link href="/" className="text-primary hover:underline">
-                homepage
-              </Link>
-              .
+              contact us via our official social channels or by Email:{" "}
+              <Link
+                  href="mailto:info@inuv8studios.com"
+                  target="_blank"
+                  className="font-medium text-accent-foreground hover:underline transition-all"
+                >
+                  info@inuv8studios.com
+                </Link>
             </p>
-          </section>
+          </div>
         </div>
       </div>
     </section>

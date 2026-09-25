@@ -12,7 +12,7 @@ export default function PrivacySection() {
           <p className="text-muted-foreground">
             Last Updated:{" "}
             <span className="font-semibold text-accent-foreground">
-              September 25, 2026
+              Sepetember 25, 2026
             </span>
           </p>
         </div>
@@ -61,9 +61,9 @@ export default function PrivacySection() {
                   Game & Playtest Data:
                 </span>{" "}
                 When you participate in our beta tests or play our titles via
-                platforms like Steam or Google Play, we may collect telemetry
-                data, bug reports, hardware specifications, and in-game
-                performance metrics to improve the experience.
+                platforms like Steam, Playstation or Google Play, we may collect
+                telemetry data, bug reports, hardware specifications, and
+                in-game performance metrics to improve the experience.
               </li>
               <li>
                 <span className="font-semibold text-foreground">
@@ -141,13 +141,17 @@ export default function PrivacySection() {
                 <span className="font-semibold text-foreground">
                   Distribution Platforms:
                 </span>{" "}
-                Steam, Google Play, and Meta Horizon Worlds.
+                Steam, Google Play, Apple App Store, Playstation and Xbox.
               </li>
               <li>
                 <span className="font-semibold text-foreground">
                   Forms & Feedback:
                 </span>{" "}
                 Google Forms for playtest surveys and feedback.
+              </li>
+              <li>
+                <span className="font-semibold text-foreground">Playfab:</span>{" "}
+                Player Accounts for mobile games and leaderboard.
               </li>
             </ul>
           </div>
@@ -229,21 +233,16 @@ export default function PrivacySection() {
               Contact Us
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              If you have questions or comments about this Privacy Policy,
-              please contact us at:
+              If you have any questions about this Privacy Policy, please
+              contact us via our official social channels or by Email:{" "}
+              <Link
+                href="mailto:info@inuv8studios.com"
+                target="_blank"
+                className="font-medium text-accent-foreground hover:underline transition-all"
+              >
+                info@inuv8studios.com
+              </Link>
             </p>
-            <div className="mt-4 space-y-1">
-              <p className="text-muted-foreground mt-2">
-                Email:{" "}
-                <Link
-                  href="mailto:info@inuv8studios.com"
-                  target="_blank"
-                  className="font-medium text-accent-foreground hover:underline transition-all"
-                >
-                  info@inuv8studios.com
-                </Link>
-              </p>
-            </div>
           </div>
         </div>
       </div>
