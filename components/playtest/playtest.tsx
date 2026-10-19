@@ -154,7 +154,7 @@ export default function Playtest() {
                 aria-label={`Follow Inuv8 Studios on ${social.name}`}
                 className="group flex h-12 w-12 items-center justify-center rounded-full border bg-background transition-all duration-300 hover:-translate-y-1 hover:bg-white"
               >
-                <img
+                <Image
                   src={social.icon}
                   alt={social.name}
                   width={22}

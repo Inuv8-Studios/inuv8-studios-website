@@ -20,6 +20,6 @@ export function ApiExplorer({ area, files }: { area: DocArea; files: ApiEntry[] 
     <div className="docs-results-line">{filtered.length} matching {filtered.length===1?"file":"files"}</div>
     <div className="docs-api-list">{filtered.map(file=><Link className="docs-api-row" key={file.id} href={apiHref(area,file.id)}><span className="docs-api-file-icon">{file.generated ? "⚙" : "C#"}</span><span className="docs-api-name"><strong>{file.file}</strong><small>{file.path}</small><span>{file.description || (file.symbols.length ? file.symbols.join(", ") : "Source declaration and implementation")}</span></span><span className="docs-api-arrow">↗</span></Link>)}</div>
     {filtered.length===0 && <p className="docs-empty-search">No matching scripts. Try a broader term or clear the module filter.</p>}
-    <div className="docs-bottom-notice"><strong>Snapshot, not live reflection.</strong><p>These entries are generated from local scripts; they don't automatically update when the Unity project changes. Run scripts/generate-doc-api.py as part of your documentation update.</p></div>
+    <div className="docs-bottom-notice"><strong>Snapshot, not live reflection.</strong><p>These entries are generated from local scripts; they don&apos;t automatically update when the Unity project changes. Run scripts/generate-doc-api.py as part of your documentation update.</p></div>
   </div>;
 }
