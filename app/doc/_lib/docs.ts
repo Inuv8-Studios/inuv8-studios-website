@@ -402,5 +402,4 @@ export const apiEntries = { arctoolkits: arcApi, override: overrideApi };
 export const getCollection = (value: string): DocCollection | undefined =>
   value === "arctoolkits" || value === "override" ? collections[value] : undefined;
 export const getPage = (area: DocArea, slug: string): DocPage | undefined => collections[area].pages.find(page => page.slug === slug);
-export const areaHref = (area: DocArea, slug?: string): string => `/doc/${area}${slug ? `/${slug}` : ""}`;
-export const apiHref = (area: DocArea, id: string): string => `${areaHref(area)}/reference/${id}`;
+export { apiHref, areaHref } from "./routes";

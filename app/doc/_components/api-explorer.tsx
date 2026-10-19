@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import { ArrowUpRight, FileCode2 } from "lucide-react";
 import type { ApiEntry, DocArea } from "../_lib/types";
-import { apiHref, areaHref } from "../_lib/docs";
+import { apiHref, areaHref } from "../_lib/routes";
 
 export function ApiExplorer({ area, files }: { area: DocArea; files: ApiEntry[] }) {
   const [search,setSearch]=useState("");

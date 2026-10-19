@@ -7,7 +7,8 @@ import { apiEntries, collections, docsUpdated } from "./_lib/docs";
 
 export const metadata: Metadata = {
   title: "Documentation | Inuv8 Studios",
-  description: "The Inuv8 Studios development handbook for ArcToolkit and Project OVERRIDE.",
+  description: "The Inuv8 Studios internal development handbook for ArcToolkit and Project OVERRIDE.",
+  robots: { index: false, follow: false, noarchive: true },
 };
 
 const spaces = [
@@ -69,7 +70,7 @@ export default function DocumentationHub() {
           <div><span className="docs-small-kicker">MADE FOR THE TEAM</span><h2>One studio. One shared way of building.</h2><p>Practical knowledge for contributors working across gameplay, design, content, and production.</p></div>
           <div className="docs-principle-grid"><div><Users size={21}/><strong>For designers</strong><p>Learn the workflows, content dependencies, and rules that shape the experience.</p></div><div><Code2 size={21}/><strong>For developers</strong><p>Follow component responsibilities, runtime systems, and source references.</p></div><div><Wrench size={21}/><strong>Built to evolve</strong><p>Guides and source indexes can be updated as new systems ship.</p></div></div>
         </section>
-        <div className="docs-bottom-notice"><BookOpen size={20}/><p>These guides describe the available script snapshots. Scene, prefab, and Inspector wiring should be verified in Unity. Documentation is public unless route access is restricted.</p></div>
+        <div className="docs-bottom-notice"><BookOpen size={20}/><p>Internal team handbook. These guides describe the available script snapshots. Scene, prefab, and Inspector wiring should be verified in Unity.</p></div>
       </div>
     </main>
   );

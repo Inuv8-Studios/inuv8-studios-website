@@ -8,7 +8,6 @@ const menuItems = [
   { name: "Override", href: "/override" },
   { name: "Dreams", href: "/dreams" },
   { name: "Team", href: "/team" },
-  { name: "Docs", href: "/doc" },
   { name: "What's New!", href: "/whats-new" },
 ];
 

@@ -4,28 +4,16 @@ import { DocShell } from "../../_components/doc-shell";
 import { ApiDetail, Article, CollectionHome } from "../../_components/doc-content";
 import { ApiExplorer } from "../../_components/api-explorer";
 import { apiEntries, collections, getCollection, getPage } from "../../_lib/docs";
-import type { DocArea } from "../../_lib/types";
 
 type RouteParams = { collection: string; slug?: string[] };
-
-export function generateStaticParams(): RouteParams[] {
-  const result: RouteParams[] = [];
-  (Object.keys(collections) as DocArea[]).forEach(area => {
-    result.push({ collection: area, slug: [] });
-    for (const page of collections[area].pages) result.push({ collection: area, slug: [page.slug] });
-    result.push({ collection: area, slug: ["reference"] });
-    for (const entry of apiEntries[area]) result.push({ collection: area, slug: ["reference", entry.id] });
-  });
-  return result;
-}
 
 export async function generateMetadata({ params }: {params: Promise<RouteParams>}): Promise<Metadata> {
   const {collection: area,slug=[]} = await params;
   const collection=getCollection(area);
-  if(!collection) return { title: "Documentation | Inuv8 Studios" };
+  if(!collection) return { title: "Documentation | Inuv8 Studios", robots: { index: false, follow: false, noarchive: true } };
   const page=slug.length===1 ? getPage(collection.id,slug[0]) : undefined;
   const name=page?.title ?? (slug[0]==="reference" ? "C# API Reference" : collection.name);
-  return { title: `${name} | Inuv8 Docs`, description: page?.summary ?? collection.intro };
+  return { title: `${name} | Inuv8 Docs`, description: page?.summary ?? collection.intro, robots: { index: false, follow: false, noarchive: true } };
 }
 
 export default async function DocCollectionPage({params}: {params:Promise<RouteParams>}) {
