@@ -69,6 +69,12 @@ export default function FooterSection() {
                 </Link>
               </li>
               <li>
+                <Link href="/doc" className="group flex items-center text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <span className="mr-2 text-primary group-hover:translate-x-1 transition-transform">›</span>
+                  Documentation
+                </Link>
+              </li>
+              <li>
                 <Link
                   href="/privacy"
                   className="group flex items-center text-sm text-muted-foreground hover:text-primary transition-colors">

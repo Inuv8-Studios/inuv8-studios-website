@@ -1,18 +1,76 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { ArrowRight, BookOpen, Code2, Gamepad2, Layers3, Users, Wrench } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { apiEntries, collections, docsUpdated } from "./_lib/docs";
 
 export const metadata: Metadata = {
-  title: "Developer Documentation | Inuv8 Studios",
-  description: "Source-backed onboarding documentation for ArcToolkit and Project OVERRIDE, built for designers and Unity C# developers.",
+  title: "Documentation | Inuv8 Studios",
+  description: "The Inuv8 Studios development handbook for ArcToolkit and Project OVERRIDE.",
 };
 
+const spaces = [
+  {
+    href: "/doc/arctoolkits",
+    title: "ArcToolkit",
+    type: "UNITY FRAMEWORK",
+    description: collections.arctoolkits.intro,
+    image: "/images/dev-image.jpg",
+    imageAlt: "Unity development workspace and game production tools",
+    guides: collections.arctoolkits.pages.length,
+    scripts: apiEntries.arctoolkits.length,
+    icon: Layers3,
+  },
+  {
+    href: "/doc/override",
+    title: "Project OVERRIDE",
+    type: "GAME DEVELOPMENT",
+    description: collections.override.intro,
+    image: "/images/background-override.png",
+    imageAlt: "Project OVERRIDE official key artwork featuring the Cypher",
+    guides: collections.override.pages.length,
+    scripts: apiEntries.override.length,
+    icon: Gamepad2,
+  },
+];
+
 export default function DocumentationHub() {
-  return <div className="docs-app docs-hub"><header className="docs-topbar"><div className="docs-topbar-brand"><Link className="docs-brand" href="/"><span className="docs-brand-mark">IN</span><span>INUV8<span className="docs-brand-muted">STUDIOS</span></span></Link><span className="docs-top-divider"/><span className="docs-top-section docs-current-section">Documentation</span></div><div className="docs-top-actions"><Link href="/" className="docs-switch-link">← Main website</Link></div></header>
-    <main className="docs-hub-main"><div className="docs-hub-hero"><div className="docs-hero-grid-bg"/><div className="docs-hub-hero-content"><span className="docs-eyebrow">INUV8 STUDIOS / ENGINEERING & DESIGN</span><div className="docs-hub-status"><span className="docs-status-indicator"/> ACTIVE KNOWLEDGE BASE · REVIEWED {docsUpdated.toUpperCase()}</div><h1>Build with <em>clarity.</em><br/>Ship with confidence.</h1><p>The internal working knowledge, made accessible: real Unity C# systems, clear designer workflows, practical setup guides and a continuously maintainable source reference.</p><div className="docs-hero-actions"><Link href="/doc/arctoolkits" className="docs-btn-primary">Explore ArcToolkit <span>↗</span></Link><Link href="/doc/override" className="docs-btn-quiet">Project OVERRIDE docs →</Link></div></div><div className="docs-hub-decoration" aria-hidden="true"><span>DOCS</span><small>01 / 02</small></div></div>
-      <div className="docs-hub-label-row"><span className="docs-small-kicker">SELECT DOCUMENTATION SPACE</span><span className="docs-muted-inline">Unity C# · Source snapshot October 2026</span></div>
-      <div className="docs-hub-cards"><Link className="docs-hub-card" href="/doc/arctoolkits"><span className="docs-hub-card-symbol">⌘</span><span className="docs-hub-card-number">01 / FRAMEWORK</span><h2>ArcToolkit <span>↗</span></h2><p>{collections.arctoolkits.intro}</p><div className="docs-hub-card-details"><span>{collections.arctoolkits.pages.length} guides</span><span>{apiEntries.arctoolkits.length} C# scripts</span></div><span className="docs-hub-card-footer">Open framework handbook →</span></Link><Link className="docs-hub-card docs-hub-card-override" href="/doc/override"><span className="docs-hub-card-symbol">◈</span><span className="docs-hub-card-number">02 / GAME PRODUCTION</span><h2>Project OVERRIDE <span>↗</span></h2><p>{collections.override.intro}</p><div className="docs-hub-card-details"><span>{collections.override.pages.length} guides</span><span>{apiEntries.override.length} C# scripts</span></div><span className="docs-hub-card-footer">Open gameplay handbook →</span></Link></div>
-      <section className="docs-hub-principles"><span className="docs-small-kicker">HOW THE HANDBOOK WORKS</span><div><h3>Read the system.<br/>Understand the contract.<br/>Extend it safely.</h3><div><p><strong>For designers.</strong> Content authoring, mission dependencies, AI behaviour setup, combat design and playtest checklists.</p><p><strong>For developers.</strong> Runtime ownership, architecture, APIs, initialization and extension points traced to actual source files.</p><p><strong>For future updates.</strong> Authored pages in the website codebase and a regenerable index of every C# script.</p></div></div></section>
-      <footer className="docs-hub-footer"><span>INUV8 STUDIOS <span className="docs-brand-muted">/ KNOWLEDGE BASE</span></span><p>Documentation describes inspected script snapshots. Scene assets and complete Unity project dependencies require verification. <strong>Access is public unless the site is protected.</strong></p><Link href="/">Back to Inuv8 Studios ↗</Link></footer>
-    </main></div>;
+  return (
+    <main className="docs-app docs-hub" id="main-content">
+      <section className="docs-hub-hero">
+        <Image src="/images/dev-image.jpg" alt="Game development environment" fill priority sizes="100vw" className="docs-cover-img" />
+        <div className="docs-hub-hero-shade" />
+        <div className="docs-hub-hero-inner">
+          <span className="docs-eyebrow"><BookOpen size={15} /> INUV8 STUDIOS / DOCUMENTATION</span>
+          <h1>Documentation</h1>
+          <p>Everything our team needs to understand, build, and expand the worlds and systems behind Inuv8 Studios.</p>
+          <div className="docs-hero-actions">
+            <Button asChild size="lg"><Link href="#collections">Browse documentation <ArrowRight size={16} /></Link></Button>
+            <Button asChild size="lg" variant="outline"><Link href="/build-with-us">Build with us <ArrowRight size={16} /></Link></Button>
+          </div>
+        </div>
+      </section>
+
+      <div className="docs-hub-main">
+        <section id="collections" className="docs-hub-collections">
+          <div className="docs-hub-label-row"><div><span className="docs-small-kicker">ENGINEERING &amp; DESIGN</span><h2>Explore the knowledge base</h2></div><span className="docs-muted-inline">Source snapshot · {docsUpdated}</span></div>
+          <div className="docs-hub-cards">
+            {spaces.map(space => {
+              const Icon = space.icon;
+              return <Link key={space.href} className="docs-hub-card" href={space.href}>
+                <div className="docs-hub-card-image"><Image src={space.image} alt={space.imageAlt} fill sizes="(max-width: 760px) 100vw, 50vw" className="docs-cover-img" /><span className="docs-hub-card-image-shade" /><span className="docs-hub-card-type"><Icon size={15} /> {space.type}</span></div>
+                <div className="docs-hub-card-body"><h3>{space.title}<ArrowRight size={19}/></h3><p>{space.description}</p><div className="docs-hub-card-details"><span><BookOpen size={14}/>{space.guides} guides</span><span><Code2 size={14}/>{space.scripts} scripts</span></div></div>
+              </Link>;
+            })}
+          </div>
+        </section>
+        <section className="docs-hub-principles">
+          <div><span className="docs-small-kicker">MADE FOR THE TEAM</span><h2>One studio. One shared way of building.</h2><p>Practical knowledge for contributors working across gameplay, design, content, and production.</p></div>
+          <div className="docs-principle-grid"><div><Users size={21}/><strong>For designers</strong><p>Learn the workflows, content dependencies, and rules that shape the experience.</p></div><div><Code2 size={21}/><strong>For developers</strong><p>Follow component responsibilities, runtime systems, and source references.</p></div><div><Wrench size={21}/><strong>Built to evolve</strong><p>Guides and source indexes can be updated as new systems ship.</p></div></div>
+        </section>
+        <div className="docs-bottom-notice"><BookOpen size={20}/><p>These guides describe the available script snapshots. Scene, prefab, and Inspector wiring should be verified in Unity. Documentation is public unless route access is restricted.</p></div>
+      </div>
+    </main>
+  );
 }
